@@ -1,17 +1,22 @@
-from population_creation import generate_population, Population
-from crossover_functions import crossover
+import numpy as np
+from utils.read_and_write_constraints import retrieve_constraints
+from utils.population_creation import generate_population, Population
+from utils.crossover_functions import crossover
 
 
 def run_evolution(population_size, amount_iterations, mutation_rate):
 
-    population = generate_population(population_size)
+    # amount_workers, amount_activities, amount_shifts, availability_matrix, requirements_matrix = retrieve_constraints()
+    problem_parameters = retrieve_constraints()
+
+    population = generate_population(population_size, problem_parameters)
 
     for iteration in range(amount_iterations):
         # Calculate fitness
         population.fitness()
 
         # print(f"{population}\n{population.fitness_values}")
-        # print(f"iteration {iteration}   average fitness: {np.mean(population.fitness_values)}    max fitness: {np.max(population.fitness_values)}\n")
+        print(f"iteration {iteration}   average fitness: {np.mean(population.fitness_values)}    max fitness: {np.max(population.fitness_values)}\n")
 
         # The new population
         new_population = Population()
@@ -27,10 +32,11 @@ def run_evolution(population_size, amount_iterations, mutation_rate):
 
         population = new_population
 
+    print(population)
     return population
 
 
 if __name__ == "__main__":
-    run_evolution(population_size=5,
-                  amount_iterations=3,
+    run_evolution(population_size=50,
+                  amount_iterations=1000,
                   mutation_rate=0.01)
