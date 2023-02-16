@@ -16,6 +16,8 @@ def choose_parents(population, fitness):
     # Parent 1
     threshold = np.random.rand()
     elem_index = np.where(cumulative_fitness > threshold)
+    # print("fitness_array = ",fitness_array)
+    # print("elem_index = ",elem_index)
 
     parent_1_index = elem_index[0][0]
 

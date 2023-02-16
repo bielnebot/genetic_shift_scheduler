@@ -6,7 +6,6 @@ from utils.crossover_functions import crossover
 
 def run_evolution(population_size, amount_iterations, mutation_rate):
 
-    # amount_workers, amount_activities, amount_shifts, availability_matrix, requirements_matrix = retrieve_constraints()
     problem_parameters = retrieve_constraints()
 
     population = generate_population(population_size, problem_parameters)
@@ -18,12 +17,12 @@ def run_evolution(population_size, amount_iterations, mutation_rate):
         # print(f"{population}\n{population.fitness_values}")
         print(f"iteration {iteration}   average fitness: {np.mean(population.fitness_values)}    max fitness: {np.max(population.fitness_values)}\n")
 
+
         # The new population
         new_population = Population()
-        for _ in range(population_size):
+        for i in range(population_size):
             # Selection
             parent_1, parent_2 = population.choose_parents()
-            # print(f"Parents are: {parent_1} and {parent_2}")
             # Reproduction
             offspring = crossover(parent_1, parent_2)
             offspring.mutate(mutation_rate)
@@ -32,11 +31,12 @@ def run_evolution(population_size, amount_iterations, mutation_rate):
 
         population = new_population
 
-    print(population)
-    return population
+    # print(population)
+    return population, problem_parameters
 
 
 if __name__ == "__main__":
-    run_evolution(population_size=50,
-                  amount_iterations=1000,
-                  mutation_rate=0.01)
+
+    final_population = run_evolution(population_size=500,
+                                     amount_iterations=100,
+                                     mutation_rate=0.01)
