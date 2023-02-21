@@ -39,9 +39,8 @@ def retrieve_constraints():
     requirements_matrix = load_matrix_file("requirements")
 
     amount_workers, amount_shifts = availability_matrix.shape
-    amount_activities, _ = requirements_matrix.shape
 
-    return amount_workers, amount_activities, amount_shifts, availability_matrix, requirements_matrix
+    return amount_workers, amount_shifts, availability_matrix, requirements_matrix
 
 
 if __name__ == "__main__":

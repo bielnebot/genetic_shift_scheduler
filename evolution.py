@@ -6,7 +6,7 @@ from utils.crossover_functions import crossover
 
 def run_evolution(population_size, amount_iterations, mutation_rate):
 
-    # amount_workers, amount_activities, amount_shifts, availability_matrix, requirements_matrix = retrieve_constraints()
+    # amount_workers, amount_shifts, availability_matrix, requirements_matrix = retrieve_constraints()
     problem_parameters = retrieve_constraints()
 
     population = generate_population(population_size, problem_parameters)
@@ -32,8 +32,7 @@ def run_evolution(population_size, amount_iterations, mutation_rate):
 
         population = new_population
 
-    print(population)
-    return population
+    return population, problem_parameters
 
 
 if __name__ == "__main__":
