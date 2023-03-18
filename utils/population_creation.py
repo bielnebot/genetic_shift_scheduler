@@ -17,7 +17,7 @@ def generate_sample(problem_parameters):
     np.random.shuffle(randomly_ordered_shifts)
 
     # Map workers to amount of available shifts
-    # worker_to_amount_availability = {i:availability_matrix[i].sum() for i in range(amount_workers)}
+    worker_to_amount_availability = {i:availability_matrix[i].sum() for i in range(amount_workers)}
 
     for shift_i in randomly_ordered_shifts:
         available_workers = availability_matrix[:, shift_i].astype(int)
@@ -30,12 +30,12 @@ def generate_sample(problem_parameters):
             index_free_workers = np.where(available_workers > 0.5)[0]
 
             # Option 1: start assigning from the least available worker (due to non stochastic selection, all members are the same)
-            # local_worker_to_amount_availability = {i: worker_to_amount_availability[i] for i in index_free_workers}
-            # new_worker_index = min(local_worker_to_amount_availability, key=local_worker_to_amount_availability.get)
+            local_worker_to_amount_availability = {i: worker_to_amount_availability[i] for i in index_free_workers}
+            new_worker_index = min(local_worker_to_amount_availability, key=local_worker_to_amount_availability.get)
             # print(f"indexs available: {index_free_workers}")
 
             # Option 2: assign randomly
-            new_worker_index = np.random.choice(index_free_workers)
+            # new_worker_index = np.random.choice(index_free_workers)
             # print(f"{new_worker_index} was selected")
 
             solution_matrix[new_worker_index, shift_i] = 1

@@ -1,5 +1,5 @@
 import numpy as np
-from utils.read_and_write_constraints import retrieve_constraints
+from utils.read_and_write_constraints import retrieve_constraints_from_excel
 from utils.population_creation import generate_population, Population
 from utils.crossover_functions import crossover
 
@@ -7,7 +7,7 @@ from utils.crossover_functions import crossover
 def run_evolution(population_size, amount_iterations, mutation_rate):
 
     # amount_workers, amount_shifts, availability_matrix, requirements_matrix = retrieve_constraints()
-    problem_parameters = retrieve_constraints()
+    problem_parameters = retrieve_constraints_from_excel()
 
     population = generate_population(population_size, problem_parameters)
 

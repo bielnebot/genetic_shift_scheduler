@@ -1,6 +1,7 @@
 import numpy as np
 from utils.mutation_functions import find_spots_to_volunteer_for
 
+
 def compute_fitness(morphology, problem_parameters):
     """
     :param morphology:
@@ -15,15 +16,15 @@ def compute_fitness(morphology, problem_parameters):
 
     amount_workers, amount_shifts, availability_matrix, requirements_matrix = problem_parameters
 
-    fit_groups = fitness_packed_schedule(morphology, amount_workers, amount_shifts)
-    #
-    # min_threshold = 7
-    # max_threshold = 15
-    # fit_min, fit_max = fitness_min_and_max_shifts_threshold(min_threshold, max_threshold, morphology, amount_workers)
+    # fit_groups = fitness_packed_schedule(morphology, amount_workers, amount_shifts)
+
+    min_threshold = 7
+    max_threshold = 15
+    fit_min, fit_max = fitness_min_and_max_shifts_threshold(min_threshold, max_threshold, morphology, amount_workers)
 
     fit_volunteer = fitness_volunteer_spots(morphology,problem_parameters)
 
-    return (0.95*fit_groups+0.05*fit_volunteer)**5
+    return (fit_min)**3
 
 
 def fitness_min_and_max_shifts_threshold(min_threshold, max_threshold, morphology, amount_workers):
@@ -84,3 +85,7 @@ def count_groups_of_ones(sample_array):
 
 def fitness_volunteer_spots(morphology,problem_parameters):
     return 1 - len(find_spots_to_volunteer_for(morphology,problem_parameters)) / 570
+
+
+if __name__ == "__main__":
+    print(count_groups_of_ones([0,1,0,1,1,0,1,1,1,0,1,0,1,1,0,1,1]))
