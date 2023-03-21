@@ -49,7 +49,7 @@ def retrieve_constraints_from_excel():
     requirements_data = pd.read_excel("utils/constraints_files/requirements.xlsx",
                                       index_col=0)
     # shift_names = list(requirements_data.columns)
-    # activity_names = list(data.index)
+    # activity_names = list(requirements_data.index)
 
     # Load availability.xlsx
     availability_data = pd.read_excel("utils/constraints_files/availability.xlsx",
@@ -62,6 +62,22 @@ def retrieve_constraints_from_excel():
     amount_workers, amount_shifts = availability_matrix.shape
 
     return amount_workers, amount_shifts, availability_matrix, requirements_matrix
+
+
+def retrieve_names_from_excel():
+    # Load requirements.xlsx
+    requirements_data = pd.read_excel("utils/constraints_files/requirements.xlsx",
+                                      index_col=0)
+    shift_names = list(requirements_data.columns)
+    activity_names = list(requirements_data.index)
+
+    # Load availability.xlsx
+    availability_data = pd.read_excel("utils/constraints_files/availability.xlsx",
+                                      index_col=0)
+    worker_names = list(availability_data.index)
+
+    return worker_names, shift_names, activity_names
+
 
 if __name__ == "__main__":
 
