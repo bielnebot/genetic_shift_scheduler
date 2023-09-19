@@ -47,6 +47,7 @@
   align-self: center;
   font-style: normal;
   margin-top: 0px;
+  text-align: center;
   font-weight: 400;
   padding-top: 0px;
 }
@@ -66,6 +67,9 @@
 }
 .home-text05 {
   color: #000000;
+}
+.home-link {
+  text-decoration: none;
 }
 .home-tuning {
   width: 100%;
@@ -90,7 +94,7 @@
   margin-bottom: var(--dl-space-space-fiveunits);
   flex-direction: column;
 }
-.home-text06 {
+.home-text07 {
   color: #03036e;
   font-size: 48px;
   text-align: center;
@@ -117,13 +121,13 @@
   border-radius: var(--dl-radius-radius-radius4);
   flex-direction: column;
   justify-content: center;
-  background-color: var(--dl-color-gray-900);
+  background-color: #aaaaaa;
 }
 .home-image {
   width: 200px;
   object-fit: cover;
 }
-.home-text07 {
+.home-text08 {
   color: rgb(3, 3, 110);
   font-size: 24px;
   font-style: normal;
@@ -135,7 +139,7 @@
   text-transform: none;
   text-decoration: none;
 }
-.home-text08 {
+.home-text09 {
   color: rgb(255, 255, 255);
   font-size: 20px;
   text-align: center;
@@ -149,13 +153,13 @@
   border-radius: var(--dl-radius-radius-radius4);
   flex-direction: column;
   justify-content: center;
-  background-color: var(--dl-color-gray-900);
+  background-color: #AAAAAA;
 }
 .home-image1 {
   width: 200px;
   object-fit: cover;
 }
-.home-text09 {
+.home-text10 {
   color: rgb(3, 3, 110);
   font-size: 24px;
   font-style: normal;
@@ -167,7 +171,7 @@
   text-transform: none;
   text-decoration: none;
 }
-.home-text10 {
+.home-text11 {
   color: rgb(255, 255, 255);
   font-size: 20px;
   text-align: center;
@@ -181,13 +185,13 @@
   border-radius: var(--dl-radius-radius-radius4);
   flex-direction: column;
   justify-content: center;
-  background-color: var(--dl-color-gray-900);
+  background-color: #AAAAAA;
 }
 .home-image2 {
   width: 200px;
   object-fit: cover;
 }
-.home-text11 {
+.home-text12 {
   color: #03036e;
   font-size: 24px;
   font-style: normal;
@@ -199,7 +203,7 @@
   text-transform: none;
   text-decoration: none;
 }
-.home-text12 {
+.home-text13 {
   color: rgb(255, 255, 255);
   font-size: 20px;
   font-style: normal;
@@ -219,13 +223,13 @@
   border-radius: var(--dl-radius-radius-radius4);
   flex-direction: column;
   justify-content: center;
-  background-color: var(--dl-color-gray-900);
+  background-color: #AAAAAA;
 }
 .home-image3 {
   width: 200px;
   object-fit: cover;
 }
-.home-text13 {
+.home-text14 {
   color: #03036e;
   font-size: 24px;
   font-style: normal;
@@ -237,7 +241,7 @@
   text-transform: none;
   text-decoration: none;
 }
-.home-text14 {
+.home-text15 {
   color: rgb(255, 255, 255);
   font-size: 20px;
   font-style: normal;
@@ -277,7 +281,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.home-text15 {
+.home-text16 {
   color: #03036e;
   font-size: 48px;
   align-self: flex-start;
@@ -321,7 +325,7 @@
 .home-heading1 {
   margin-bottom: var(--dl-space-space-tripleunit);
 }
-.home-text16 {
+.home-text17 {
   color: var(--dl-color-gray-700);
   text-align: left;
 }
@@ -357,7 +361,7 @@
 .home-heading2 {
   margin-bottom: var(--dl-space-space-tripleunit);
 }
-.home-text17 {
+.home-text18 {
   color: var(--dl-color-gray-700);
   text-align: left;
 }
@@ -413,7 +417,7 @@
   flex-direction: column;
   justify-content: center;
 }
-.home-text18 {
+.home-text19 {
   color: rgb(3, 3, 110);
   width: 647px;
   font-size: 48px;
@@ -452,7 +456,7 @@
 .home-heading3 {
   margin-bottom: var(--dl-space-space-tripleunit);
 }
-.home-text19 {
+.home-text20 {
   color: var(--dl-color-gray-700);
   text-align: left;
 }
@@ -488,7 +492,7 @@
 .home-heading4 {
   margin-bottom: var(--dl-space-space-tripleunit);
 }
-.home-text20 {
+.home-text21 {
   color: var(--dl-color-gray-700);
   text-align: left;
 }
@@ -527,7 +531,7 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.home-text21 {
+.home-text22 {
   color: rgb(3, 3, 110);
   height: 112px;
   font-size: 48px;
@@ -571,7 +575,7 @@
 .home-heading5 {
   margin-bottom: var(--dl-space-space-tripleunit);
 }
-.home-text22 {
+.home-text23 {
   color: var(--dl-color-gray-700);
   text-align: left;
 }
@@ -649,6 +653,7 @@
     padding-bottom: var(--dl-space-space-fourunits);
   }
   .home-content-container {
+    width: 479px;
     padding-top: var(--dl-space-space-fiveunits);
     padding-bottom: var(--dl-space-space-fiveunits);
   }
